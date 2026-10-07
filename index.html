@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Speech Healthcare Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>🩺 Healthcare Assistant</h1>
+            <p>Describe your symptoms using text or voice</p>
+        </div>
+
+        <div class="health-icon">
+            ❤️‍🩹
+        </div>
+
+        <div id="chatBox" class="chat-box">
+
+            <div class="bot-message">
+                Hello! 👋 I am your Healthcare Assistant.
+                <br><br>
+                Tell me about your symptoms, for example:
+                <br>
+                "I have a headache"
+                <br>
+                "I have fever"
+                <br>
+                "I have stomach pain"
+            </div>
+
+        </div>
+
+        <div class="input-section">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Describe your symptoms..."
+            >
+
+            <button class="mic-button" onclick="startListening()">
+                🎤
+            </button>
+
+            <button class="send-button" onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+        <div class="emergency">
+            ⚠️ For a medical emergency, contact your local emergency service
+            or seek immediate medical care.
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

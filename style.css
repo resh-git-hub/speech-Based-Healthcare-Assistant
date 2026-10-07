@@ -1,0 +1,484 @@
+```css
+/* ================================
+   MODERN HEALTHCARE CHATBOT UI
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at top left, #dff7f5, transparent 35%),
+        radial-gradient(circle at bottom right, #dce8ff, transparent 35%),
+        #f5f8fc;
+
+    color: #17202a;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+   ================================ */
+
+.container {
+    width: 450px;
+    max-width: 94vw;
+    height: 680px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px rgba(31, 55, 75, 0.15),
+        0 5px 20px rgba(31, 55, 75, 0.08);
+
+    backdrop-filter: blur(20px);
+}
+
+
+/* ================================
+   HEADER
+   ================================ */
+
+.header {
+    position: relative;
+
+    padding: 25px 24px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087f8c,
+            #12a8a0
+        );
+
+    overflow: hidden;
+}
+
+.header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    right: -60px;
+    top: -80px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border-radius: 50%;
+}
+
+.header h1 {
+    position: relative;
+    z-index: 2;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 7px;
+}
+
+.header p {
+    position: relative;
+    z-index: 2;
+
+    font-size: 13px;
+
+    opacity: 0.9;
+}
+
+
+/* ================================
+   HEALTH ICON
+   ================================ */
+
+.health-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: -32px auto 5px;
+
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    font-size: 32px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ================================
+   CHAT AREA
+   ================================ */
+
+.chat-box {
+    flex: 1;
+
+    padding: 22px 18px;
+
+    overflow-y: auto;
+
+    background: #f8fafc;
+
+    scroll-behavior: smooth;
+}
+
+
+/* Custom scrollbar */
+
+.chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: #c8d6d8;
+
+    border-radius: 10px;
+}
+
+
+/* ================================
+   CHAT BUBBLES
+   ================================ */
+
+.bot-message,
+.user-message {
+    max-width: 82%;
+
+    padding: 13px 16px;
+
+    margin-bottom: 14px;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+    border-radius: 18px;
+
+    animation: messageAppear 0.3s ease;
+}
+
+
+/* Bot */
+
+.bot-message {
+    margin-right: auto;
+
+    color: #263238;
+
+    background: white;
+
+    border: 1px solid #edf1f3;
+
+    border-bottom-left-radius: 5px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+/* User */
+
+.user-message {
+    margin-left: auto;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087f8c,
+            #12a8a0
+        );
+
+    border-bottom-right-radius: 5px;
+
+    box-shadow:
+        0 6px 15px rgba(8, 127, 140, 0.2);
+}
+
+
+/* Message animation */
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ================================
+   INPUT AREA
+   ================================ */
+
+.input-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 14px 16px;
+
+    background: white;
+
+    border-top: 1px solid #edf1f3;
+}
+
+
+/* Text input */
+
+#userInput {
+    flex: 1;
+
+    height: 46px;
+
+    padding: 0 16px;
+
+    font-size: 14px;
+
+    color: #263238;
+
+    background: #f4f7f8;
+
+    border: 1px solid transparent;
+
+    border-radius: 14px;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+#userInput::placeholder {
+    color: #9aa7ad;
+}
+
+#userInput:focus {
+    background: white;
+
+    border-color: #12a8a0;
+
+    box-shadow:
+        0 0 0 3px rgba(18, 168, 160, 0.1);
+}
+
+
+/* ================================
+   BUTTONS
+   ================================ */
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* Microphone */
+
+.mic-button {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    background: #eef4f5;
+
+    color: #087f8c;
+
+    border-radius: 14px;
+}
+
+.mic-button:hover {
+    background: #dceeed;
+
+    transform: translateY(-2px);
+}
+
+.mic-button:active {
+    transform: scale(0.94);
+}
+
+
+/* Send */
+
+.send-button {
+    height: 46px;
+
+    padding: 0 18px;
+
+    flex-shrink: 0;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087f8c,
+            #12a8a0
+        );
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 15px rgba(8, 127, 140, 0.2);
+}
+
+.send-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(8, 127, 140, 0.28);
+}
+
+.send-button:active {
+    transform: scale(0.96);
+}
+
+
+/* ================================
+   EMERGENCY WARNING
+   ================================ */
+
+.emergency {
+    margin: 0;
+
+    padding: 11px 15px;
+
+    color: #7a5a00;
+
+    background: #fff9e6;
+
+    border-top: 1px solid #f3e5b1;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+   ================================ */
+
+@media (max-width: 500px) {
+
+    body {
+        align-items: stretch;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+
+        height: 100vh;
+
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+    .header {
+        padding: 22px 20px;
+    }
+
+    .chat-box {
+        padding: 18px 14px;
+    }
+
+    .bot-message,
+    .user-message {
+        max-width: 88%;
+
+        font-size: 13px;
+    }
+
+    .input-section {
+        padding: 12px;
+    }
+
+}
+
+
+/* ================================
+   SMALL SCREEN
+   ================================ */
+
+@media (max-width: 360px) {
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .send-button {
+        padding: 0 13px;
+    }
+
+    .mic-button {
+        width: 42px;
+    }
+
+}
+```
